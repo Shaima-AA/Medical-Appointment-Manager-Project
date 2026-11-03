@@ -3,20 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+
     <title>Home</title>
 </head>
 <body>
     <%- include('./partials/navbar') %>
+
+    <%  const doctors = [
+  { name: 'Dr. Sara',  specialty: 'Cardiology' },
+  { name: 'Dr. Ali',   specialty: 'Dermatology' },
+  { name: 'Dr. Noor',    specialty: 'Pediatrics' },
+  { name: 'Dr. Yousif', specialty: 'General Practice' },
+]; %>
 
     <% if (user) { %>
   <h1>Welcome <%= user.username %></h1>
 <% } else { %>
   <h1>Welcome to Medical Appointment Manager</h1>
 <% } %>
-<h2>Choose a doctor to book an appointment.</h2>
+<h2>Choose a doctor to book an appointment</h2>
 
+<div class="doctors">
+  <% for (let doctor of doctors) { %>
+    <div class="doctor-card" href="/appointments/new?doctor=<%= doctor._id %>">
+      <h3><%= doctor.name %></h3>
+      <p>Specialty: <%= doctor.specialty %></p>
+      <a href="/appointment/new">Book Appointment</a>
+    </div>
+  <% } %>
+</div>
 
-
-    
+  
 </body>
 </html>

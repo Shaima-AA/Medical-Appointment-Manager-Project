@@ -3,6 +3,8 @@ const router = express.Router();
 const Appointment = require("../models/Appointment.js");
 const isSignedIn = require("../middleware/is-signed-in.js");
 
+
+
 //CRUD
 //1. CREATE new appointment
   router.get('/new', isSignedIn, (req,res)=>{
