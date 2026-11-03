@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 //schema
 const appointmentSchema = new mongoose.Schema({
@@ -23,4 +23,10 @@ const appointmentSchema = new mongoose.Schema({
         required: true
     }
 
-})
+},{timestamps:true});
+
+//model
+const Appointment = mongoose.model("Appointment", appointmentSchema);
+
+//export model
+module.exports = Appointment;

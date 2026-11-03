@@ -8,7 +8,15 @@
 <body>
     <%- include('./partials/navbar') %>
 
-    <h1>Welcome to my Website</h1>
+    <% if (user) { %>
+  <h1>Welcome <%= user.username %></h1>
+<% } else { %>
+  <h1>Welcome to Medical Appointment Manager</h1>
+<% } %>
+<h2>Choose a doctor to book an appointment.</h2>
+
+
+
     
 </body>
 </html>
