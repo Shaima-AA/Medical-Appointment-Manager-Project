@@ -6,14 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+        <%- include('../partials/navbar') %>
+
     <h1>All Appointments</h1>
 
-    <!-- <%= for(let oneAppointment of appointments) { %>
-       
+    <% for(let oneAppointment of appointments) { %>
+       <p>Appointment with <%= oneAppointment.Doctor.name %> by <%= oneAppointment.Patient.username  %></p>
 
 
 
-        <% } %> -->
+        <% } %>
 
 
 

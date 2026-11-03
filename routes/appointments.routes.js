@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Appointment = require("../models/Appointment.js");
-const isSignedIn = require("../../../../lectures/unit2/Open House Code Along/middleware/is-signed-in.js");
+const isSignedIn = require("../middleware/is-signed-in.js");
 
 //CRUD
 //1. CREATE new appointment
