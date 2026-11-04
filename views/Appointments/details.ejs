@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <%- include('../partials/navbar') %>
+
+    <h1>Appointment Details</h1>
+
+    <p>Patient: <%= appointments.Patient %></p>
+    <p>With Dr. <%= appointments.Doctor?.Name  %></p>
+    <p>Date: <%= appointments.Date %></p>
+    <p>Time: <%= appointments.Time %></p>
+    <p>Reason: <%= appointments.Reason %></p>
+
+
+    <a href="/appointments/<%= appointments._id %>/edit">Edit Appointment</a>
+</body>
+</html>

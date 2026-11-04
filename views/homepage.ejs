@@ -10,13 +10,6 @@
 <body>
     <%- include('./partials/navbar') %>
 
-    <%  const doctors = [
-  { name: 'Dr. Sara',  specialty: 'Cardiology' },
-  { name: 'Dr. Ali',   specialty: 'Dermatology' },
-  { name: 'Dr. Noor',    specialty: 'Pediatrics' },
-  { name: 'Dr. Yousif', specialty: 'Dentistry' },
-]; %>
-
     <% if (user) { %>
   <h1>Welcome <%= user.username %></h1>
 <% } else { %>
@@ -26,10 +19,11 @@
 
 <div class="doctors">
   <% for (let doctor of doctors) { %>
-    <div class="doctor-card" href="/appointments/new?doctor=<%= doctor._id %>">
-      <h3><%= doctor.name %></h3>
-      <p>Specialty: <%= doctor.specialty %></p>
-      <a href="/appointment/new">Book Appointment</a>
+    <div class="doctor-card">
+      <h3>Dr. <%= doctor.Name %></h3>
+      <p>Specialty: <%= doctor.Specialty %></p>
+      
+      <a href="/appointments/new/<%= doctor._id %>">Book Appointment</a>
     </div> <br>
   <% } %>
 </div>

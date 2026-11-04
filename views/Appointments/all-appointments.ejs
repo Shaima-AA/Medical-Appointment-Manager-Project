@@ -10,9 +10,11 @@
 
     <h1>All Appointments</h1>
 
-    <% for(let oneAppointment of appointments) { %>
-       <p>Appointment with <%= oneAppointment.Doctor.name %> by <%= oneAppointment.Patient.username  %></p>
+  
 
+    <% for(let oneAppointment of appointments) { %>
+       <p>Appointment with Dr. <%= oneAppointment.Doctor?.Name %> by <%= oneAppointment.Patient  %></p>
+       <a href="/Appointments/<%= oneAppointment._id %>">View Details</a>
 
 
         <% } %>

@@ -12,13 +12,13 @@
 
         <h1>Book an Appointment</h1>
 
-        <form action="" method="post">
+        <form action="/appointments/new/<%= doctor._id %>" method="post">
             <label for="Patient">Patient:</label>
             <input type="text" id="Patient" name="Patient"> <br><br><br>
 
             <label for="Doctor">Doctor:</label>
-            <input type="text" id="Doctor" name="Doctor"><br><br><br>
-
+            <input type="text" id="Doctor" name="Doctor" value="Dr. <%= doctor.Name %>" disabled><br><br><br>
+            
             <label for="Date">Date:</label>
             <input type="date" id="Date" name="Date"><br><br><br>
 
@@ -28,9 +28,9 @@
             <label for="Reason">Reason:</label>
             <input type="text" id="Reason" name="Reason"><br><br><br>
 
-            <!-- <button href="/appointment">Book</button> -->
+            <button>Book Appointment</button>
 
-            <a href="/appointment">Book</a>
+           
 
 
 
