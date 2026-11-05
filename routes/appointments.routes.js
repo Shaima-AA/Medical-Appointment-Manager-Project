@@ -10,7 +10,7 @@ const AvailableSlots = require("../models/availableSlots.js")
 //1. CREATE new appointment
 router.get('/new/:id', isSignedIn, async (req, res) => {
   const doctor = await Doctor.findById(req.params.id)
-  const availableSlots = await AvailableSlots.find({available: true})
+  const availableSlots = await AvailableSlots.find({available: true, doctor:req.params.id})
   res.render('Appointments/create-appointment.ejs', { doctor, availableSlots })
 })
 

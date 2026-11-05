@@ -9,9 +9,11 @@ async function seedDb(){
     await connectToDB()
     try{
         const createdDoctor = await Doctor.create({
-            Name: 'Shaima',
-            Specialty: 'Cardiology'
-        })
+            Name: 'Zaid',
+            Specialty: 'Pedriatrics'
+        }
+    
+    )
 
         const availableSlots= await AvailableSlots.insertMany([
             {
@@ -35,6 +37,7 @@ async function seedDb(){
                 available: true
             }
         ])
+        console.log('Data Seeded Successfully')
     }catch(err){
     }
     mongoose.disconnect()
