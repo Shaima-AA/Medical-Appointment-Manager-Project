@@ -19,6 +19,7 @@ router.get('/new/:id', isSignedIn, async (req, res) => {
 router.post('/new/:doctorId', isSignedIn, async (req, res) => {
   const doctor = await Doctor.findById(req.params.doctorId)
   const createdAppointment = await Appointment.create({
+    user: req.session.user._id,
     Patient: req.body.Patient,
     Doctor: doctor,
     Date: req.body.Date,

@@ -9,15 +9,19 @@
         <%- include('../partials/navbar') %>
 
     <h1>All Appointments</h1>
+     
 
   
 
     <% for(let oneAppointment of appointments) { %>
+     <% if (user._id == oneAppointment.user){ %>
+
        <p>Appointment with Dr. <%= oneAppointment.Doctor?.Name %> by <%= oneAppointment.Patient  %></p>
        <a href="/Appointments/<%= oneAppointment._id %>">View Details</a>
 
 
         <% } %>
+          <% } %>
 
 
 
