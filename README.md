@@ -44,13 +44,13 @@ Medical Appointment Manager
 | Method | Route | Description |
 |---------|-------|-------------|
 | GET | / | Home page |
-| GET | /appointment | List all appointments |
-| GET | /appointment/new | New appointment |
-| POST | /appointment | Create appointment |
-| GET | /appointment/:id | View appointment |
-| GET | /appointment/:id/edit | Edit appointment form |
-| PUT | /appointment/:id | Update appointment |
-| DELETE | /appointment/:id | Delete appointment |
+| GET | /appointments | List all appointments |
+| GET | /appointments/new | New appointment |
+| POST | /appointments | Create appointment |
+| GET | /appointments/:id | View appointment |
+| GET | /appointments/:id/edit | Edit appointment form |
+| PUT | /appointments/:id | Update appointment |
+| DELETE | /appointments/:id | Delete appointment |
 
 
 
