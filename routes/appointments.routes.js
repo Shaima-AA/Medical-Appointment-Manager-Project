@@ -63,6 +63,12 @@ router.put('/:id', isSignedIn, async (req, res) => {
 
 
 
+//Delete
+router.delete('/:id',isSignedIn, async (req,res)=>{
+     const deletedAppointment = await Appointment.findByIdAndDelete(req.params.id)
+     res.redirect('/appointments')
+})
+
 
 
 
