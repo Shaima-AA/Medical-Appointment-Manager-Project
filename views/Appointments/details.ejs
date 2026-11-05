@@ -24,16 +24,16 @@
         </p>
 
 
-        <!-- <a href="/appointments/<%= appointments._id %>/edit">Edit Appointment</a> -->
-
         <a href="/appointments/<%= appointments._id %>/edit">
             <button>Edit Appointment</button>
-        </a>
-        
+        </a>    <br>   <br>   
 
-        <a href="/appointments/<%= appointments._id %>">
-        <button>Delete Appointment</button>
-        </a>
-</body>
+    
+        <form action="/appointments/<%= appointments._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Appointment</button>
+        </form>
+
+
+    </body>
 
 </html>
