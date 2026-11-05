@@ -8,9 +8,11 @@
 </head>
 
 <body>
+
+    <%- include('../partials/navbar') %>
     <h1>Edit Your Appointment</h1>
 
-    <form action="/appointments/<%= appointment.Doctor._id %>?_method=PUT" method="post">
+    <form action="/appointments/<%= appointment._id %>?_method=PUT" method="post">
         <label for="Patient">Patient:</label>
         <input type="text" id="Patient" name="Patient" value="<%= appointment.Patient %>" > <br><br><br>
 
@@ -21,12 +23,13 @@
         <input type="date" id="Date" name="Date" value="<%= appointment.Date %>"><br><br><br>
 
         <label for="Time">Time:</label>
-        <input type="time" id="Time" name="Time"><br><br><br>
+        <input type="time" id="Time" name="Time" value="<%= appointment.Time %>"><br><br><br>
 
         <label for="Reason">Reason:</label>
         <input type="text" id="Reason" name="Reason"><br><br><br>
 
-        <button>Update Appointment</button>
+        <!-- <a href="/appointments">Update Appointment</a> -->
+         <button>update</button>
 </form>
 
 

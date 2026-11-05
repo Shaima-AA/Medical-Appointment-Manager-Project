@@ -44,20 +44,21 @@ router.get('/:doctorId', isSignedIn, async (req,res)=>{
 })
 
 
+//update
 // show edit form
 router.get('/:id/edit', isSignedIn, async (req, res) => {
   const appointment = await Appointment.findById(req.params.id).populate('Doctor').populate('Patient')
-  res.render('Appointments/edit-appointment.ejs', { appointment })
+  res.render('Appointments/edit-appointment.ejs', { appointment:appointment })
 })
-
 // save changes
 router.put('/:id', isSignedIn, async (req, res) => {
-  await Appointment.findByIdAndUpdate(req.params.id, {
+  const updatedAppointment = await Appointment.findByIdAndUpdate(req.params.id, {
+    Patient: req.body.Patient,
     Date: req.body.Date,
     Time: req.body.Time,
     Reason: req.body.Reason
   })
-  res.redirect('/appointments/' + req.params.id)
+  res.redirect('/appointments')
 })
 
 
