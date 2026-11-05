@@ -30,7 +30,7 @@ Medical Appointment Manager
 
 
 ## Database Design
-![The ERD](<medical.drawio (1).png>)
+![The ERD](<ERD Screenshot.png>)
 
 
 
@@ -50,7 +50,7 @@ Medical Appointment Manager
 | GET | /appointments/:id | View appointment |
 | GET | /appointments/:id/edit | Edit appointment form |
 | PUT | /appointments/:id | Update appointment |
-| DELETE | /appointments/:id | Delete appointment |
+| DELETE | /appointment/:id | Delete appointment |
 
 
 
