@@ -21,9 +21,11 @@
             
             <label for="Date">Date:</label>
             <input type="date" id="Date" name="Date"><br><br><br>
-
-            <label for="Time">Time:</label>
-            <input type="time" id="Time" name="Time"><br><br><br>
+            <select name="time" id="time">Time:
+            <% for(let slot of availableSlots){ %>
+                <option value="<%= slot._id %>"><%= slot.time %></option>
+            <% } %>
+</select>
 
             <label for="Reason">Reason:</label>
             <input type="text" id="Reason" name="Reason"><br><br><br>

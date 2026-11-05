@@ -20,13 +20,14 @@ const appointmentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Time: {
-        type: String,
-        required: true
-    },
     Reason:{
         type: String,
         required: true
+    },
+    time:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref: 'AvaibleSchedule',
+        unique: true
     }
 
 },{timestamps:true});

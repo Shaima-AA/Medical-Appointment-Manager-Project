@@ -3,27 +3,26 @@ const router = express.Router();
 const Appointment = require("../models/Appointment.js");
 const isSignedIn = require("../middleware/is-signed-in.js");
 const Doctor = require("../models/Doctor.js")
+const AvailableSlots = require("../models/availableSlots.js")
 
 
 //CRUD
 //1. CREATE new appointment
 router.get('/new/:id', isSignedIn, async (req, res) => {
   const doctor = await Doctor.findById(req.params.id)
-  // console.log(req.params.Doctors)
-  // const appoint = await Appointment.find().populate('Doctor')
-  // console.log(appoint)
-  res.render('Appointments/create-appointment.ejs', { doctor })
+  const availableSlots = await AvailableSlots.find({available: true})
+  res.render('Appointments/create-appointment.ejs', { doctor, availableSlots })
 })
-
 
 router.post('/new/:doctorId', isSignedIn, async (req, res) => {
   const doctor = await Doctor.findById(req.params.doctorId)
+  const updatedSlot = await AvailableSlots.findByIdAndUpdate(req.body.time, {available:false})
   const createdAppointment = await Appointment.create({
     user: req.session.user._id,
     Patient: req.body.Patient,
     Doctor: doctor,
     Date: req.body.Date,
-    Time: req.body.Time,
+    time: req.body.time,
     Reason: req.body.Reason
   })
   res.redirect('/appointments')
