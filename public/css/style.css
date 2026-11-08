@@ -1,39 +1,85 @@
-.doctor-card {
-  background-color: lightgreen;
-  border-radius: 28px;
-  padding: 24px;
-  margin: 10px;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #212529;
+  line-height: 1.5;
+}
 
-  width: 260px;          /* normal card width instead of full width */
+nav{
+    text-align: center;
+    background-color:rgb(17, 127, 164);
+}
+
+.navElement{
+  display: inline-block;
+  padding: 10px 34px;
+  background-color: #212529;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 18px;
+  margin: 20px;
+}
+
+/* centers the page content with space on the sides */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+#welcome {
+  margin: 0 0 8px;
+  font-size: 44px;
+  font-weight: 500;
+}
+
+#h2 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+/* the grid: as many 260px+ columns as fit, equal width */
+.doctors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.doctor-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  padding: 32px;
+  background-color: lightgreen;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .doctor-card:hover {
-     cursor: pointer;
   background-color: rgb(27, 207, 123);
+  cursor: pointer;
 }
 
-.doctors {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.doctor-card h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
 }
 
-#welcome {
-    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-    margin: 0 0 12px;
-    font-size: 52px;
-    line-height: 1.05;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: rgb(21, 2, 39);
+.doctor-card p {
+  margin: 0 0 16px;
 }
 
-#h2 {
-    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
-    color:rgb(4, 26, 75); ;
+.btn {
+  display: inline-block;
+  padding: 10px 34px;
+  background-color: #212529;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 18px;
 }
