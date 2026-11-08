@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+
     <title>Document</title>
 </head>
 
@@ -28,6 +30,14 @@
         <label for="Reason">Reason:</label>
         <input type="text" id="Reason" name="Reason" value="<%= appointment.Reason %>"><br><br><br>
 
+         Time: <select name="time" id="time">Time:
+            <option value="<%= appointment.time._id %>"><%= appointment.time.time %></option>
+                <% for(let slot of availableSlots){ %>
+                    <option value="<%= slot._id %>">
+                        <%= slot.time %>
+                    </option>
+                    <% } %>
+            </select> <br><br><br>
     
          <button>Update Appointment</button>
 </form>

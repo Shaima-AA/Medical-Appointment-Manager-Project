@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>All Appointments</title>
 </head>
 <body>
-        <%- include('../partials/navbar') %>
+  <%- include('../partials/navbar') %>
 
-    <h1>All Appointments</h1>
-     
+  <div class="container appointments-container">
+    <h1 class="page-title">All Appointments</h1>
 
-  
+    <div class="appointments-list">
+      <% for (let oneAppointment of appointments) { %>
+        <% if (user._id == oneAppointment.user) { %>
 
-    <% for(let oneAppointment of appointments) { %>
-     <% if (user._id == oneAppointment.user){ %>
+          <div class="appointment-card">
+            
 
-       <p>Appointment with Dr. <%= oneAppointment.Doctor?.Name %> by <%= oneAppointment.Patient  %></p>
-       <a href="/Appointments/<%= oneAppointment._id %>">View Details</a>
+            <div class="appointment-info">
+              <h2>Appointment with Dr. <%= oneAppointment.Doctor?.Name %></h2>
+              <p>by <%= oneAppointment.Patient %></p>
+            </div>
 
+            <a href="/Appointments/<%= oneAppointment._id %>" class="appointment-btn">View Details</a>
+          </div>
 
         <% } %>
-          <% } %>
-
-
-
-
-
-
-
-
-
-
+      <% } %>
+    </div>
+  </div>
 </body>
 </html>
