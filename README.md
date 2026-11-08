@@ -30,7 +30,7 @@ Medical Appointment Manager
 
 
 ## Database Design
-![The ERD](<ERD Screenshot.png>)
+![The ERD](<erd.png>)
 
 
 
