@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
 
-    <title>Home</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Home</title>
 </head>
+
 <body>
-    <%- include('./partials/navbar') %>
+  <%- include('./partials/navbar') %>
 
     <% if (user) { %>
-  <h1>Welcome <%= user.username %></h1>
-<% } else { %>
-  <h1>Welcome to Medical Appointment Manager</h1>
-<% } %>
-<h2>Choose a doctor to book an appointment</h2>
+      <h1 id="welcome">Welcome <%= user.username %>
+      </h1>
+      <% } else { %>
+        
+        <% } %>
+          <h2 id="h2">Choose a Doctor to Book an Appointment</h2>
 
-<div class="doctors">
-  <% for (let doctor of doctors) { %>
-    <div class="doctor-card">
-      <h3>Dr. <%= doctor.Name %></h3>
-      <p>Specialty: <%= doctor.Specialty %></p>
-      
-      <a href="/appointments/new/<%= doctor._id %>">Book Appointment</a>
-    </div> <br>
-  <% } %>
-</div>
+          <div class="doctors">
+            <% for (let doctor of doctors) { %>
+              <div class="doctor-card">
+                <h3>Dr. <%= doctor.Name %>
+                </h3>
+                <p>Specialty: <%= doctor.Specialty %>
+                </p>
 
-  
+                <a href="/appointments/new/<%= doctor._id %>">Book Appointment</a>
+              </div> <br>
+              <% } %>
+          </div>
+
+
 </body>
+
 </html>

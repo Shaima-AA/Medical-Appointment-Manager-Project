@@ -18,21 +18,23 @@
 
             <label for="Doctor">Doctor:</label>
             <input type="text" id="Doctor" name="Doctor" value="Dr. <%= doctor.Name %>" disabled><br><br><br>
-            
+
             <label for="Date">Date:</label>
             <input type="date" id="Date" name="Date"><br><br><br>
-            <select name="time" id="time">Time:
-            <% for(let slot of availableSlots){ %>
-                <option value="<%= slot._id %>"><%= slot.time %></option>
-            <% } %>
-</select>
+            Time: <select name="time" id="time">Time:
+                <% for(let slot of availableSlots){ %>
+                    <option value="<%= slot._id %>">
+                        <%= slot.time %>
+                    </option>
+                    <% } %>
+            </select> <br><br><br>
 
             <label for="Reason">Reason:</label>
             <input type="text" id="Reason" name="Reason"><br><br><br>
 
             <button>Book Appointment</button>
 
-           
+
 
 
 

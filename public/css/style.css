@@ -1,2 +1,39 @@
+.doctor-card {
+  background-color: lightgreen;
+  border-radius: 28px;
+  padding: 24px;
+  margin: 10px;
+  text-align: center;
 
+  width: 260px;          /* normal card width instead of full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
 
+.doctor-card:hover {
+     cursor: pointer;
+  background-color: rgb(27, 207, 123);
+}
+
+.doctors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#welcome {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    margin: 0 0 12px;
+    font-size: 52px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: rgb(21, 2, 39);
+}
+
+#h2 {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color:rgb(4, 26, 75); ;
+}
