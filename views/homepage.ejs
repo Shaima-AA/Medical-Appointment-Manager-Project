@@ -66,6 +66,7 @@
         <div class="doctor-card" style="background-image: url('<%= doctor.image %>')">
           <h3>Dr. <%= doctor.Name %></h3>
           <p>Specialty: <%= doctor.Specialty %></p>
+          <img>
           <a href="/appointments/new/<%= doctor._id %>" class="btn">Book Appointment</a>
         </div>
       <% } %>

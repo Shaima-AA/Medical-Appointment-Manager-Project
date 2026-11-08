@@ -50,7 +50,6 @@ app.use(passUserToView)
 
 
 
-
 // Routes go here
 app.use('/auth',authController)
 app.use('/',indexController)
