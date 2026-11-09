@@ -73,10 +73,15 @@
         </a>    <br>   <br>   
 
     
-        <form class="delete-form" action="/appointments/<%= appointments._id %>?_method=DELETE" method="POST">
-            <button class="delete-btn" type="submit">Delete Appointment</button>
-        </form>
+      
 
+
+<form class="delete-form"
+      action="/appointments/<%= appointments._id %>?_method=DELETE"
+      method="POST"
+      onsubmit="return confirm('Delete this appointment? This cannot be undone.');">
+    <button class="delete-btn" type="submit">Delete Appointment</button>
+</form>
 
     </body>
 
