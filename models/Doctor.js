@@ -10,6 +10,9 @@ const doctorSchema = new mongoose.Schema({
    Specialty:{
     type: String,
     required: true
+   },
+   doctorImage:{
+    type: String
    }
 }, { timestamps: true })
 

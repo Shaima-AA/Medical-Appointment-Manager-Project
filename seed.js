@@ -9,8 +9,9 @@ async function seedDb(){
     await connectToDB()
     try{
         const createdDoctor = await Doctor.create({
-            Name: 'Shaima',
-            Specialty: 'Dermatology'
+            Name: 'Fatimah',
+            Specialty: 'Family Medicine',
+            doctorImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd9afKI7eY8ZNdYFnUBauPiti8sU56IpUgV8CMGrV5m4A3wKNv5fqeQ8s&s=10'
         }
     
     )

@@ -4,7 +4,11 @@ body {
   color: #212529;
   line-height: 1.5;
   background-color: rgb(192, 255, 255);
+/* background-image: url('https://media.istockphoto.com/id/2232678008/photo/hospital-building-with-clear-signage-for-urgent-care-emergency-and-other-services-during.webp?a=1&b=1&s=612x612&w=0&k=20&c=t3fJ6TP3ICjrBw1HSNNsFeSUpW7ATAjOy2gkzqc41xk=');
+background-repeat: no-repeat;
+background-size: cover; */
 }
+
 
 .navbar {
   display: flex;
@@ -51,14 +55,18 @@ body {
   font-weight: 500;
 }
 
-.doctors {
+/* .doctors {
   display: flex;
+  gap: 32px;
+} */
+.doctors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 32px;
 }
 
-
 .doctor-card {
-     flex: 1;          /* every card shares the row equally */
+     flex: 1;          
   min-width: 0;
   position: relative;
   display: flex;
@@ -70,6 +78,28 @@ body {
   border-radius: 20px;
   text-align: center;
   
+}
+
+/* the doctor's image: fixed height, cropped neatly to fit the card */
+.doctor-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* hide the broken-image icon when a doctor has no image (src is empty) */
+.doctor-card img[src=""] {
+  display: none;
+}
+
+/* keep the button on one line and at the bottom of every card */
+.btn {
+  white-space: nowrap;
+}
+
+.doctor-card .btn {
+  margin-top: auto;
 }
 
 .doctor-card:hover {
@@ -498,4 +528,65 @@ body {
 
 .auth-btn:hover {
   background-color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+  display: flex;
+  align-items: center;
+  height: 280px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://plus.unsplash.com/premium_photo-1764687727798-80c525b5e4c6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D') center / cover no-repeat;
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.hero #welcome,
+.hero #h2 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero #welcome {
+  margin: 0 0 8px;
+}
+
+.hero #h2 {
+  margin: 0;
 }
