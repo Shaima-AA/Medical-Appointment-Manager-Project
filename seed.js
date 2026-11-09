@@ -9,8 +9,8 @@ async function seedDb(){
     await connectToDB()
     try{
         const createdDoctor = await Doctor.create({
-            Name: 'Zaid',
-            Specialty: 'Pedriatrics'
+            Name: 'Shaima',
+            Specialty: 'Dermatology'
         }
     
     )

@@ -39,7 +39,8 @@ router.get('/', async (req, res) => {
 
 //3.edit
 router.get('/:doctorId', isSignedIn, async (req,res)=>{
-   const bookedAppointment = await Appointment.findById(req.params.doctorId).populate('Patient').populate('Doctor')
+   const bookedAppointment = await Appointment.findById(req.params.doctorId).populate('Patient').populate('Doctor').populate('time')
+
    res.render('Appointments/details.ejs', {appointments:bookedAppointment})
 })
 
@@ -48,9 +49,12 @@ router.get('/:doctorId', isSignedIn, async (req,res)=>{
 // show edit form
 router.get('/:id/edit', isSignedIn, async (req, res) => {
   const appointment = await Appointment.findById(req.params.id).populate('Doctor').populate('Patient').populate('time')
-  const availableSlots = await AvailableSlots.find({available: true, doctor:req.params.id})
+  console.log(appointment)
+  const availableSlots = await AvailableSlots.find({available: true, doctor:appointment.Doctor._id})
+  console.log(availableSlots)
   res.render('Appointments/edit-appointment.ejs', { appointment:appointment, availableSlots })
 })
+
 // save changes
 router.put('/:id', isSignedIn, async (req, res) => {
   const updatedAppointment = await Appointment.findByIdAndUpdate(req.params.id, {
@@ -67,8 +71,10 @@ router.put('/:id', isSignedIn, async (req, res) => {
 //Delete
 router.delete('/:id',isSignedIn, async (req,res)=>{
      const deletedAppointment = await Appointment.findByIdAndDelete(req.params.id)
+     const updatedSlot = await AvailableSlots.findByIdAndUpdate(deletedAppointment.time, {available: true})
      res.redirect('/appointments')
 })
+
 
 
 
