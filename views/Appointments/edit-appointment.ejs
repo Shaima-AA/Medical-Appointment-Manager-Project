@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,7 +27,7 @@
         <!-- <label for="Time">Time:</label>
         <input type="time" id="Time" name="Time" value="<%= appointment.Time %>"><br><br><br> -->
 
-        <label for="Reason">Reason:</label>
+        <!-- <label for="Reason">Reason:</label>
         <input type="text" id="Reason" name="Reason" value="<%= appointment.Reason %>"><br><br><br>
 
          Time: <select name="time" id="time">Time:
@@ -40,6 +40,58 @@
             </select> <br><br><br>
     
          <button>Update Appointment</button>
+</form>
+
+
+
+</body>
+
+</html>  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body class="booking-page">
+
+    <%- include('../partials/navbar') %>
+    <h1 id="booking-title">Edit Your Appointment</h1>
+
+    <form class="booking-form" action="/appointments/<%= appointment._id %>?_method=PUT" method="post">
+        <label for="Patient">Patient:</label>
+        <input type="text" id="Patient" name="Patient" value="<%= appointment.Patient %>" > <br><br><br>
+
+        <label for="Doctor">Doctor:</label>
+        <input type="text" id="Doctor" name="Doctor" value="Dr. <%= appointment.Doctor.Name %>" disabled><br><br><br>
+
+        <label for="Date">Date:</label>
+        <input type="date" id="Date" name="Date" value="<%= appointment.Date %>"><br><br><br>
+
+        <!-- <label for="Time">Time:</label>
+        <input type="time" id="Time" name="Time" value="<%= appointment.Time %>"><br><br><br> -->
+
+        <label for="Reason">Reason:</label>
+        <input type="text" id="Reason" name="Reason" value="<%= appointment.Reason %>"><br><br><br>
+
+         Time: <select name="time" id="time">Time:
+            <option value="<%= appointment.time._id %>"><%= appointment.time.time %></option>
+                <% for(let slot of availableSlots){ %>
+                    <option value="<%= slot._id %>">
+                        <%= slot.time %>
+                    </option>
+                    <% } %>
+            </select> <br><br><br>
+    
+         <button class="booking-btn">Update Appointment</button>
 </form>
 
 

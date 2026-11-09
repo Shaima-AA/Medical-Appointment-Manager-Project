@@ -55,7 +55,7 @@ router.get('/:id/edit', isSignedIn, async (req, res) => {
   res.render('Appointments/edit-appointment.ejs', { appointment:appointment, availableSlots })
 })
 
-// save changes
+//save changes
 router.put('/:id', isSignedIn, async (req, res) => {
   const updatedAppointment = await Appointment.findByIdAndUpdate(req.params.id, {
     Patient: req.body.Patient,
@@ -66,6 +66,24 @@ router.put('/:id', isSignedIn, async (req, res) => {
   res.redirect('/appointments')
 })
 
+// save changes
+// router.put('/:id', isSignedIn, async (req, res) => {
+//   const appointment = await Appointment.findById(req.params.id)
+
+//   // if a different slot was picked: free the old one, take the new one
+//   if (req.body.time && String(appointment.time) !== req.body.time) {
+//     await AvailableSlots.findByIdAndUpdate(appointment.time, { available: true })
+//     await AvailableSlots.findByIdAndUpdate(req.body.time, { available: false })
+//     appointment.time = req.body.time
+//   }
+
+//   appointment.Patient = req.body.Patient
+//   appointment.Date = req.body.Date
+//   appointment.Reason = req.body.Reason
+//   await appointment.save()
+
+//   res.redirect('/appointments')
+// })
 
 
 //Delete

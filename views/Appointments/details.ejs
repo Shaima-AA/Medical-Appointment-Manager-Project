@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,6 +32,49 @@
     
         <form action="/appointments/<%= appointments._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Appointment</button>
+        </form>
+
+
+    </body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body class="details-page">
+    <%- include('../partials/navbar') %>
+
+        <h1 id="details-title">Appointment Details</h1>
+
+        <p id="detail-patient" class="detail-line">Patient: <%= appointments.Patient %>
+        </p>
+        <p id="detail-doctor" class="detail-line">With Dr. <%= appointments.Doctor?.Name %>
+        </p>
+        <p id="detail-date" class="detail-line">Date: <%= appointments.Date %>
+        </p>
+        <p id="detail-time" class="detail-line">Time: <%= appointments.time?.time %></p>
+        <p id="detail-reason" class="detail-line">Reason: <%= appointments.Reason %>
+        </p>
+
+
+        <a class="edit-link" href="/appointments/<%= appointments._id %>/edit">
+            <button class="edit-btn">Edit Appointment</button>
+        </a>    <br>   <br>   
+
+    
+        <form class="delete-form" action="/appointments/<%= appointments._id %>?_method=DELETE" method="POST">
+            <button class="delete-btn" type="submit">Delete Appointment</button>
         </form>
 
 
