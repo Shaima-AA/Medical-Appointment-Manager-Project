@@ -31,7 +31,7 @@ router.post('/new/:doctorId', isSignedIn, async (req, res) => {
 
 //2.to get all appointments
 router.get('/', async (req, res) => {
-  const allAppointments = await Appointment.find().populate('Doctor').populate('Patient')
+  const allAppointments = await Appointment.find({ user: req.session.user._id }).populate('Doctor').populate('Patient')
   res.render('Appointments/all-appointments.ejs', { appointments: allAppointments })
 })
 

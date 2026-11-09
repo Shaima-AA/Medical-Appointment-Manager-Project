@@ -11,7 +11,15 @@
 
   <div class="container appointments-container">
     <h1 class="page-title">All Appointments</h1>
+<% if (appointments.length === 0) { %>
 
+  <div class="empty-state">
+    <h3>No appointments yet</h3>
+    <p>Choose a doctor from the homepage to book your first appointment.</p>
+    
+  </div>
+
+<% } else { %>
     <div class="appointments-list">
       <% for (let oneAppointment of appointments) { %>
         <% if (user._id == oneAppointment.user) { %>
@@ -28,8 +36,9 @@
           </div>
 
         <% } %>
-      <% } %>
+      <% } %> 
     </div>
   </div>
+   <% } %>
 </body>
 </html>
