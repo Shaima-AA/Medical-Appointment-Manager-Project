@@ -30,7 +30,15 @@ Medical Appointment Manager is a full-stack web application that lets patients b
 
 
 ## Getting Started
-
+1. create a folder and cd into it 
+2. clone the project in your folder 
+3. create .env file
+```javascript
+MONGODB_URI=your-mongo-db-connection-string
+SESSION_SECRET=your-sectret-key
+PORT=3000
+```
+4. run npm i 
 
 
 
@@ -38,14 +46,14 @@ Medical Appointment Manager is a full-stack web application that lets patients b
 
 
 ## User Stories
-Sign up: As a new visitor, I want to create an account with a username and a password, so that I can book appointments.
-Secure password: As a user, I want the app to require a password longer than 6 characters, so that my account is better protected.
-Sign in and out: As a registered user, I want to sign in and sign out, so that only I can see and manage my appointments.
-Browse doctors: As a patient, I want to see a list of doctors with their name, specialty and picture, so that I can choose the right doctor for my needs.
-Book an appointment: As a patient, I want to choose a date and an available time slot with a doctor and give a reason for my visit, so that I can reserve my visit.
-View my appointments: As a patient, I want to see a list of my own appointments and open the details of each one, so that I can check when and with whom my visits are.
-Edit an appointment: As a patient, I want to change the date, time or reason of my appointment, so that I can reschedule without booking again.
-Cancel an appointment: As a patient, I want to cancel an appointment after a confirmation pop-up, so that I don't delete one by accident and the time slot becomes available again.
+1. Sign up: As a new visitor, I want to create an account with a username and a password, so that I can book appointments.
+2. Secure password: As a user, I want the app to require a password longer than 6 characters, so that my account is better protected.
+3. Sign in and out: As a registered user, I want to sign in and sign out, so that only I can see and manage my appointments.
+4. Browse doctors: As a patient, I want to see a list of doctors with their name, specialty and picture, so that I can choose the right doctor for my needs.
+5. Book an appointment: As a patient, I want to choose a date and an available time slot with a doctor and give a reason for my visit, so that I can reserve my visit.
+6. View my appointments: As a patient, I want to see a list of my own appointments and open the 7. details of each one, so that I can check when and with whom my visits are.
+7. Edit an appointment: As a patient, I want to change the date, time or reason of my appointment, so that I can reschedule without booking again.
+8. Cancel an appointment: As a patient, I want to cancel an appointment after a confirmation pop-up, so that I don't delete one by accident and the time slot becomes available again.
 
 
 ## Database Design
