@@ -4,9 +4,7 @@ body {
   color: #212529;
   line-height: 1.5;
   background-color: rgb(192, 255, 255);
-/* background-image: url('https://media.istockphoto.com/id/2232678008/photo/hospital-building-with-clear-signage-for-urgent-care-emergency-and-other-services-during.webp?a=1&b=1&s=612x612&w=0&k=20&c=t3fJ6TP3ICjrBw1HSNNsFeSUpW7ATAjOy2gkzqc41xk=');
-background-repeat: no-repeat;
-background-size: cover; */
+
 }
 
 
@@ -133,7 +131,6 @@ background-size: cover; */
 
 /*-------------------------------------------- create appointment page /*-------------------------------------------- */
 
-/* ===== Booking page ===== */
 
 /* white page so the green card stands out (only on this page) */
 .booking-page {
@@ -162,10 +159,9 @@ background-size: cover; */
   padding: 32px;
   background-color: lightgreen;
   border-radius: 20px;
-  font-weight: 600;          /* labels and the plain "Time:" text */
+  font-weight: 600;          
 }
 
-/* the <br> tags are not needed anymore */
 .booking-form br {
   display: none;
 }
@@ -220,7 +216,6 @@ background-size: cover; */
   background-color: #000;
 }
 
-/* phones: labels go above the fields */
 @media (max-width: 560px) {
   .booking-form {
     grid-template-columns: 1fr;
@@ -340,11 +335,6 @@ background-size: cover; */
 
 /*--------------------------------------------  appointments details page /*-------------------------------------------- */
 
-
-
-
-
-/* ===== Appointment Details page ===== */
 
 /* the page is a grid: the two middle columns make a centered 640px area */
 .details-page {

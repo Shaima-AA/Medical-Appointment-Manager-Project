@@ -1,41 +1,4 @@
-<!-- 
- <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Home</title>
-</head>
-
-<body>
-  <%- include('./partials/navbar') %>
-
-  <div class="container">
-
-    <% if (user) { %>
-      <h1 id="welcome">Welcome <%= user.username %></h1>
-    <% } %>
-
-    <h2 id="h2">Choose a Doctor to Book an Appointment</h2>
-
-    <div class="doctors">
-      <% for (let doctor of doctors) { %>
-        <div class="doctor-card" style="background-image: url('<%= doctor.image %>')">
-          <h3>Dr. <%= doctor.Name %></h3>
-          <p>Specialty: <%= doctor.Specialty %></p>
-          <a href="/appointments/new/<%= doctor._id %>" class="btn">Book Appointment</a>
-        </div>
-      <% } %>
-    </div>
-
-  </div>
-
-</body>
-
-</html> -->
 
 
 <!DOCTYPE html>
